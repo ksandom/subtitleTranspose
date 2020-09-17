@@ -1,5 +1,5 @@
 # subtitleTranspose
-Transposes Subtitles when the subtitles timings don't match the video. There are many reasons why this can happen, and this will only cater to some of them. YMMV.
+Transposes subtitles when the subtitle timings don't match the video. There are many reasons why this can happen, and this will only cater to some of them. YMMV.
 
 It takes the latest subtitle entry, and assumes it's the end of the video. Entering the videoLength gives it enough information to reposition everything between the start to the the end to be until the videoLength value instead.
 
@@ -34,5 +34,5 @@ stt input.srt 00:46:13,00 > output.srt
 
 Same, but specify that there are 60 seconds of credits after the last subtitles.
 ```
-stt input.srt 00:46:13 60 > output.srt\n";
+stt input.srt 00:46:13 60 > output.srt
 ```

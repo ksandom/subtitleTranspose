@@ -30,7 +30,7 @@ function displayHelp()
 {
     echo "stt - SubTitle Transpose
     (c) Kevin Sandom 2020 - GPLv3. See LICENSE for details.
-    Transposes Subtitles when the subtitles timings don't match the video. There are many reasons why this can happen, and this will only cater to some of them. YMMV.
+    Transposes subtitles when the subtitle timings don't match the video. There are many reasons why this can happen, and this will only cater to some of them. YMMV.
     
     It takes the latest subtitle entry, and assumes it's the end of the video. Entering the videoLength gives it enough information to reposition everything between the start to the the end to be until the videoLength value instead.
     
