@@ -1,4 +1,4 @@
-# subtitleTranspose
+# Legacy subtitleTranspose
 
 Transposes subtitles when the subtitle timings don't match the video. There are many reasons why this can happen, and this will only cater to some of them. YMMV.
 
@@ -6,7 +6,7 @@ It takes the latest subtitle entry, and assumes it's the end of the video. Enter
 
 However there may be some time after the last subtitle before the video ends, while the credits roll. You can specify this with creditsLengthInSeconds. It's assumed to be 33 seconds if it's not specified. Why 33? Because that's what was convenient when I wrote this.
 
-**This is the documentation for the legacy workflow. It's still here in case it suits your situation better. But for most people, I recommend using the new workflow documented in the main README.md.**
+**This is the documentation for the legacy workflow. It's still here in case it suits your situation better. It's easier to automate, but the new way is way easier to get a good result. So for most people, I recommend using the new workflow documented in the main [README.md](../README.md).**
 
 ## Install
 
