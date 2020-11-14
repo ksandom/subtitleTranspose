@@ -24,14 +24,12 @@ else
     $includePath="/var/lib/stt";
 }
 
-require $includePath.'/comparitor.php';
-require $includePath.'/timeLine.php';
 require $includePath.'/timeLineFunctions.php';
-require $includePath.'/easierWorkflow.php';
+require $includePath.'/legacyWorkflow.php';
 
-if (!isset($argv[1]))
+if (!isset($argv[2]))
 {
-    displayHelp_easier();
+    displayHelp_legacy();
     die ("\n\nNeed more input. So I displayed help, and am now exiting.\n");
 }
 
@@ -41,6 +39,6 @@ if ($argv[1] == '--help')
     exit(0);
 }
 
-doEasierWorkflow($argv);
+doLegacyWorkflow($argv);
 
 ?>

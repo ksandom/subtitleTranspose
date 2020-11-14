@@ -1,9 +1,18 @@
 # subtitleTranspose
-Transposes subtitles when the subtitle timings don't match the video. There are many reasons why this can happen, and this will only cater to some of them. YMMV.
 
-It takes the latest subtitle entry, and assumes it's the end of the video. Entering the videoLength gives it enough information to reposition everything between the start to the the end to be until the videoLength value instead.
+A really, _really_ easy way to get subtitle timings to correctly match the video you are watching. It assumes you have a subtlte file (`.srt`) for the media you are watching.
 
-However there may be some time after the last subtitle before the video ends, while the credits roll. You can specify this with creditsLengthInSeconds. It's assumed to be 33 seconds if it's not specified. Why 33? Because that's what was convenient when I wrote this.
+1. You run `stt subtitles.srt`, where `subtitles.srt` is the name of your subtitles file in this example.
+    * It takes the original subtitle file, `subtitles.srt`, and makes a copy with `-editThis` appended to the end, ie `subtitles-editThis.srt`.
+1. You then edit `subtitles-editThis.srt`.
+    * Start by correcting a timestamp near the beginning and end.
+    * Come back and make corrections after testing what you have.
+1. Now run `stt subtitles.srt` again.
+    * It will look at your corrects and guess what should be in between, and before and after.
+
+If you strike any places that are still not quite right, correct the individual timestamps one at a time, and re-run `stt subtitles.srt` after every change. On the worst-sync'd movie we've watched, it took about 6 edits to get a really good result. On most material, it only takes the start and end changes mentioned in the second step.
+
+Note that only edits to the start timestamp of each subtitle is honoured.
 
 ## Install
 
@@ -18,21 +27,7 @@ sudo make uninstall
 ```
 
 ## Syntax
-    stt inputSubtitleFile videoLength [creditsLengthInSeconds] > outputFileName.srt
 
-## Examples
-
-Take input.srt, specify that it ends at 00:46:13, and create output.srt as the result.
 ```
-stt input.srt 00:46:13 > output.srt
-```
-
-Same, but using the .SRT timestamp format.
-```
-stt input.srt 00:46:13,00 > output.srt
-```
-
-Same, but specify that there are 60 seconds of credits after the last subtitles.
-```
-stt input.srt 00:46:13 60 > output.srt
+stt inputSubtitleFile
 ```
